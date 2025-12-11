@@ -1,0 +1,93 @@
+/* GLOBAL THEME */
+body {
+  background: linear-gradient(135deg, #6a00ff, #b366ff);
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  transition: 0.4s ease;
+}
+
+/* DARK MODE */
+body.dark {
+  background: #0c0c0c;
+  color: #ddd;
+}
+
+/* DARK MODE BUTTON */
+.mode-toggle {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  color: white;
+  font-size: 16px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: 0.3s;
+}
+body.dark .mode-toggle {
+  background: rgba(255,255,255,0.15);
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  width: 150px;
+  border-radius: 15px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+body.dark .card {
+  background: rgba(255,255,255,0.05);
+}
+
+.card p {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* SCROLLABLE CHART SECTION */
+.chart-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.chart-container canvas {
+  min-width: 400px;
+  scroll-snap-align: center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 3px 18px rgba(0,0,0,0.25);
+}
+
+body.dark .chart-container canvas {
+  background: rgba(255,255,255,0.05);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .card { width: 120px; padding: 15px; }
+  .chart-container canvas { min-width: 300px; }
+}
